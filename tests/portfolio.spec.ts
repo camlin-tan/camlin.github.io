@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test('résumé content renders without missing assets or browser errors', async ({ page, request }) => {
+test('portfolio renders correctly and the résumé PDF is not accessible', async ({ page, request }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
@@ -11,10 +11,9 @@ test('résumé content renders without missing assets or browser errors', async 
   await expect(page.locator('.experience-item')).toHaveCount(3);
   await expect(page.locator('.availability')).toHaveText('Available from January 2027');
   await expect(page.locator('.project-quant .status-tag')).toHaveText('In progress');
-  const resumeLink = page.getByRole('link', { name: 'Download résumé' });
-  const resume = await request.get((await resumeLink.getAttribute('href'))!);
-  expect(resume.ok()).toBeTruthy();
-  expect((await resume.body()).subarray(0, 5).toString()).toBe('%PDF-');
+  await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
+  const resume = await request.get('camlin-tan-resume.pdf');
+  expect(resume.status()).toBe(404);
   await page.evaluate(() => document.fonts.ready);
   expect(errors).toEqual([]);
 });

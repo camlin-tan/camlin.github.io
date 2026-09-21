@@ -4,7 +4,6 @@ import Icon from '../components/Icon.astro';
 import SystemGraphic from '../components/SystemGraphic.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { profile, projects, experience, skillGroups } from '../data/portfolio';
-const resume = `${import.meta.env.BASE_URL}camlin-tan-resume.pdf`;
 ---
 <Layout>
   <header class="site-header">
@@ -15,8 +14,6 @@ const resume = `${import.meta.env.BASE_URL}camlin-tan-resume.pdf`;
       </nav>
       <div class="header-actions">
         <button class="theme-toggle icon-button" aria-label="Switch to light theme" title="Switch theme"><Icon name="sun" class="sun-icon" size={18}/><Icon name="moon" class="moon-icon" size={18}/></button>
-        <span class="header-divider"></span>
-        <a class="header-resume" href={resume} target="_blank" rel="noopener">Résumé <Icon name="arrow" size={16}/><span class="sr-only"> PDF (opens in a new tab)</span></a>
         <button class="menu-toggle icon-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><Icon name="menu" class="menu-icon"/><Icon name="close" class="close-icon"/></button>
       </div>
     </div>
@@ -29,7 +26,7 @@ const resume = `${import.meta.env.BASE_URL}camlin-tan-resume.pdf`;
           <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> SOFTWARE ENGINEER <span class="eyebrow-divider">/</span> SINGAPORE</div>
           <h1 id="hero-heading">Thoughtful code.<br/><span>Dependable systems.</span></h1>
           <p class="hero-intro">I’m <strong>Camlin Tan</strong>, a computer science student at NUS.<br class="desktop-break"/> I build dependable backends, AI infrastructure, and full-stack applications with care.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <Icon name="down" size={17}/></a><a class="button button-secondary" href={resume} download>Download résumé <Icon name="download" size={17}/></a></div>
+          <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <Icon name="down" size={17}/></a></div>
           <p class="availability"><span class="status-dot"></span>{profile.availability}</p>
         </div>
         <SystemGraphic />
@@ -48,7 +45,7 @@ const resume = `${import.meta.env.BASE_URL}camlin-tan-resume.pdf`;
     </section>
 
     <section id="experience" class="section container" aria-labelledby="experience-heading">
-      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>02</span> EXPERIENCE</div><h2 id="experience-heading">Built in good company<span class="accent">.</span></h2></div><a class="text-link" href={resume} target="_blank" rel="noopener">Full résumé <Icon name="arrow" size={16}/><span class="sr-only"> PDF (opens in a new tab)</span></a></div>
+      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>02</span> EXPERIENCE</div><h2 id="experience-heading">Built in good company<span class="accent">.</span></h2></div></div>
       <div class="timeline">{experience.map((job, index) => <article class:list={['experience-item', { 'experience-featured': index === 0 }]}>
         <div class="experience-date"><span class="timeline-point"></span><span class="mono">{job.period}</span><span class="experience-location">Singapore</span></div>
         <div class="experience-body"><div class="experience-title"><div><h3>{job.role}</h3><p class="company-name">{job.company}<span>{job.specialism && ` / ${job.specialism}`}</span></p></div>{index === 0 && <span class="company-monogram">ht<span>x</span></span>}</div><p class="experience-context">{job.fullName}</p><p class="experience-summary">{job.summary}</p>{job.highlights.length > 0 && <ul class="experience-highlights">{job.highlights.map(point => <li>{point}</li>)}</ul>}<ul class="tags">{job.tags.map(tag => <li>{tag}</li>)}</ul></div>

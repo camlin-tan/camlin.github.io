@@ -19,19 +19,18 @@ npm run preview   # Serve the production build locally
 npm test          # Desktop and mobile browser checks
 ```
 
-Tests use installed Microsoft Edge locally and Playwright Chromium in CI. On a machine without Edge, install Chromium with `npx playwright install chromium` and set `CI=1` when testing. Automated checks cover accessibility in both themes, keyboard controls, mobile navigation, clipboard success/failure, the résumé download, reduced motion, 320–1440px layouts, and use without JavaScript.
+Tests use installed Microsoft Edge locally and Playwright Chromium in CI. On a machine without Edge, install Chromium with `npx playwright install chromium` and set `CI=1` when testing. Automated checks cover accessibility in both themes, keyboard controls, mobile navigation, clipboard success/failure, the absence of a publicly accessible résumé PDF, reduced motion, 320–1440px layouts, and use without JavaScript.
 
 ## Update content
 
 - `src/data/portfolio.ts` — project descriptions, optional GitHub/demo URLs, experience, skills, and contact details.
 - `src/pages/index.astro` — hero, education, about text, and page structure.
 - `src/styles/global.css` — design tokens, both themes, component styles, responsive and print layouts.
-- `public/camlin-tan-resume.pdf` — the original supplied résumé, served without alteration.
 - `public/og-image.svg` and `public/og-image.png` — editable social preview and its raster version.
 
 Project cards render `github` and `demo` links automatically when verified URLs are added to their data. HealthNote's source-code link was verified against [its public README](https://github.com/camlin-tan/tp). The remaining project URLs were not supplied and have not been invented. The GitHub profile link comes from this repository's remote. Project illustrations are conceptual graphics, not application screenshots.
 
-The quant data engine is explicitly **in progress**; its unconfirmed features are described as planned. The downloadable PDF is the original and still contains its original wording about that project. Update that PDF separately when the résumé changes.
+The quant data engine is explicitly **in progress**; its unconfirmed features are described as planned. The site does not host or link to a résumé PDF.
 
 ## Deploy
 

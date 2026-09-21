@@ -81,9 +81,6 @@
   .js .theme-toggle, .js .copy-email { display: inline-flex; }
   .moon-icon, [data-theme='light'] .sun-icon { display: none; }
   [data-theme='light'] .moon-icon { display: block; }
-  .header-divider { height: 17px; width: 1px; background: var(--line); }
-  .header-resume { font-size: 12px; display: flex; gap: 11px; align-items: center; }
-  .header-resume:hover { color: var(--accent); }
   .menu-toggle { display: none; }
   .hero { padding-top: 79px; }
   .hero-main { display: grid; grid-template-columns: 1.55fr 1fr; gap: 30px; align-items: center; padding-bottom: 71px; }
@@ -319,8 +316,6 @@
     .brand { gap: 9px; font-size: 14px; }
     .brand-mark { width: 30px; height: 30px; font-size: 19px; }
     .header-actions { gap: 10px; margin-left: auto; }
-    .header-divider { display: none; }
-    .header-resume { font-size: 11px; gap: 5px; margin-right: 5px; }
     .js .menu-toggle { display: inline-flex; }
     .menu-toggle .close-icon { display: none; }
     .menu-toggle[aria-expanded='true'] .close-icon { display: block; }
@@ -412,7 +407,6 @@
   }
   @media (max-width: 390px) {
     .header-actions { gap: 4px; }
-    .header-resume { margin-right: 0; }
     .hero-eyebrow { font-size: 8px; letter-spacing: .65px; }
     .hero-actions { gap: 9px; }
     .button { padding-inline: 12px; font-size: 11px; gap: 10px; }
