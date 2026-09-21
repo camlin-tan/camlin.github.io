@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101212"/>
+  <rect x="38" y="38" width="1124" height="554" rx="10" fill="none" stroke="#2b302d"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="84" y="80" width="44" height="44" rx="8" fill="none" stroke="#64786a"/>
+    <text x="94" y="111" font-size="29" fill="#b4e8c5" letter-spacing="-3">ct</text>
+    <text x="146" y="110" font-size="23" font-weight="600" fill="#f0f2ed">camlin.tan</text>
+    <text x="84" y="211" font-size="14" letter-spacing="3" fill="#a1aaa5">SOFTWARE ENGINEER / SINGAPORE</text>
+    <text x="79" y="303" font-size="70" font-weight="600" letter-spacing="-3" fill="#f0f2ed">Thoughtful code.</text>
+    <text x="79" y="387" font-size="70" font-weight="600" letter-spacing="-3" fill="#b4e8c5">Dependable systems.</text>
+    <text x="84" y="443" font-size="21" fill="#a1aaa5">Backend engineering · AI infrastructure · Full-stack development</text>
+    <path d="M84 485h1030" stroke="#2b302d"/>
+    <text x="84" y="537" font-size="17" fill="#a1aaa5">NUS Computer Science</text>
+    <circle cx="821" cy="532" r="4" fill="#b4e8c5"/>
+    <text x="838" y="537" font-size="16" fill="#a1aaa5">Available from January 2027</text>
+  </g>
+  <g stroke="#b4e8c5" stroke-width="1.2" stroke-opacity=".6">
+    <path d="m891 227 90-51 90 51-90 52-90-52Z" fill="#1c2721"/>
+    <path d="m891 187 90-51 90 51-90 52-90-52Z" fill="#213328"/>
+    <path d="m891 147 90-51 90 51-90 52-90-52Z" fill="#283f31"/>
+    <path d="m952 147 16-9m-16 9 16 9m42-18-16 9 16 9m-23-23-10 28" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+---
+const { id } = Astro.props;
+---
+<div class:list={['project-visual', `visual-${id}`]} aria-hidden="true">
+  {id === 'rag' && <div class="rag-diagram">
+    <div class="document-stack"><div class="mini-document document-back"></div><div class="mini-document"><span class="document-label">SOURCE</span><i></i><i></i><i></i><div class="document-image"><svg viewBox="0 0 60 28"><path d="m0 28 17-20 13 13 9-10 21 17" fill="currentColor" opacity=".4"/><circle cx="45" cy="6" r="4" fill="currentColor" opacity=".6"/></svg></div></div></div>
+    <div class="flow-connector"><span></span><span></span><span></span></div>
+    <div class="retrieval-node"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 3v24M3 15h24M6.5 6.5l17 17m0-17-17 17" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="6" fill="var(--surface)" stroke="currentColor"/></svg></div>
+    <div class="flow-connector"><span></span><span></span><span></span></div>
+    <div class="answer-snippet"><span class="snippet-label">GROUNDED RESPONSE</span><i></i><i></i><i></i><span class="source-cite">↗ source · 01</span></div>
+  </div>}
+  {id === 'healthnote' && <div class="health-diagram">
+    <div class="health-terminal"><div class="terminal-top"><span class="terminal-dots"><i></i><i></i><i></i></span><span>healthnote / build</span></div><div class="terminal-body"><p><span class="terminal-muted">$</span> ./gradlew test</p><p class="terminal-success">✓ &nbsp;Unit tests</p><p class="terminal-success">✓ &nbsp;Integration tests</p><div class="terminal-result"><span>BUILD SUCCESSFUL</span><span>↗</span></div></div></div>
+    <div class="quality-seal"><span>TOP</span><strong>10<span>%</span></strong><span>IN COHORT</span></div>
+  </div>}
+  {id === 'travelsync' && <div class="travel-diagram">
+    <svg viewBox="0 0 540 200" preserveAspectRatio="xMidYMid slice"><defs><pattern id="map-grid" width="55" height="48" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><path d="M0 0H55V48" fill="none" stroke="currentColor" stroke-opacity=".10" stroke-width="1"/></pattern></defs><path d="M0 0h540v200H0z" fill="url(#map-grid)"/><path d="M-20 168C90 170 118 90 215 104s177 83 345 10" fill="none" stroke="currentColor" stroke-opacity=".06" stroke-width="24"/><path d="M141 131c40 0 33-68 95-57s57 78 131 40" fill="none" stroke="var(--project-accent)" stroke-width="2" stroke-dasharray="5 5"/><circle cx="141" cy="131" r="7" fill="var(--project-accent)" fill-opacity=".2" stroke="var(--project-accent)"/><circle cx="367" cy="114" r="7" fill="var(--project-accent)" fill-opacity=".2" stroke="var(--project-accent)"/><circle cx="237" cy="76" r="16" fill="var(--surface)" stroke="var(--project-accent)"/><path d="M237 68v16m-8-8h16" stroke="var(--project-accent)"/></svg>
+    <span class="map-label label-start">01 / EXPLORE</span><span class="map-label label-end">03 / DISCOVER</span><div class="collaboration-pill"><span class="avatar">A</span><span class="avatar second">B</span><span>One shared itinerary.</span></div>
+  </div>}
+  {id === 'quant' && <div class="quant-diagram"><div class="quant-topline"><span>MARKET DATA PIPELINE</span><span class="work-status"><i></i> IN DEVELOPMENT</span></div><div class="pipeline"><div><svg viewBox="0 0 24 24"><path d="M2 12h4l3-7 6 14 3-7h4"/></svg><span>INGEST</span></div><span class="pipeline-line"></span><div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16M8 4v6m8-1v6m-8-1v6"/></svg><span>PROCESS</span></div><span class="pipeline-line"></span><div><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg><span>QUERY</span></div></div><span class="pipeline-caption">From live events to useful signals.</span></div>}
+</div>

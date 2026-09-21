@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import type { Project } from '../data/portfolio';
+interface Props { project: Project; index: number; }
+const { project, index } = Astro.props;
+---
+<article class:list={['project-card', `project-${project.id}`]}>
+  <ProjectVisual id={project.id} />
+  <div class="project-content">
+    <div class="project-meta"><span>{project.category}</span><span>0{index + 1}</span></div>
+    <div class="project-title-row"><h3>{project.name}</h3>{project.status === 'In progress' && <span class="status-tag">In progress</span>}</div>
+    <p class="project-description">{project.description}</p>
+    <ul class="tags" aria-label={`${project.name} technologies`}>{project.tags.map(tag => <li>{tag}</li>)}</ul>
+    <details class="project-details">
+      <summary><span>Behind the build</span><Icon name="plus" size={16} /></summary>
+      <div class="project-details-body"><p class="mono small">{project.period}</p><ul>{project.highlights.map(point => <li>{point}</li>)}</ul></div>
+    </details>
+    {(project.github || project.demo) && <div class="project-links">
+      {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer"><Icon name="github" size={16} /> Source code <Icon name="arrow" size={14}/><span class="sr-only"> for {project.name} (opens in a new tab)</span></a>}
+      {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer">Live demo <Icon name="arrow" size={14}/><span class="sr-only"> for {project.name} (opens in a new tab)</span></a>}
+    </div>}
+  </div>
+</article>

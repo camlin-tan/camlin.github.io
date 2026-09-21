@@ -1,0 +1,45 @@
+---
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource/jetbrains-mono/latin-400.css';
+import '../styles/global.css';
+const base = import.meta.env.BASE_URL;
+const siteUrl = new URL(import.meta.env.SITE || 'https://camlin-tan.github.io');
+const canonical = new URL(base, siteUrl);
+const title = 'Camlin Tan — Software Engineer';
+const description = 'Software engineer and NUS Computer Science student in Singapore. Building dependable backends, AI infrastructure, and thoughtful full-stack applications. Available from January 2027.';
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#101212" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(`${base}og-image.png`, siteUrl)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Camlin Tan. Thoughtful code. Dependable systems. Software Engineer, Singapore." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try {
+        const theme = localStorage.getItem('portfolio-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch {}
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', document.documentElement.dataset.theme === 'light' ? '#f7f8f5' : '#101212');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>
