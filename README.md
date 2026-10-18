@@ -30,7 +30,7 @@ Tests use installed Microsoft Edge locally and Playwright Chromium in CI. On a m
 
 Project cards render `github` and `demo` links automatically when verified URLs are added to their data. HealthNote's source-code link was verified against [its public README](https://github.com/camlin-tan/tp). The remaining project URLs were not supplied and have not been invented. The GitHub profile link comes from this repository's remote. Project illustrations are conceptual graphics, not application screenshots.
 
-The quant data engine is explicitly **in progress**; its unconfirmed features are described as planned. The site does not host or link to a résumé PDF.
+The content reflects the latest supplied résumé (October 2026), including the CS2109S computer vision capstone and the implemented quant pipeline. The quant data engine remains **in progress**, with built functionality described separately from its ongoing status. The site does not host or link to a résumé PDF.
 
 ## Deploy
 

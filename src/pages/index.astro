@@ -10,7 +10,7 @@ import { profile, projects, experience, skillGroups } from '../data/portfolio';
     <div class="container header-inner">
       <a class="brand" href="#" aria-label="Camlin Tan, back to top"><span class="brand-mark">c<span>t</span><i></i></span><span>camlin<span class="brand-dot">.</span>tan</span></a>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#experience">Experience</a><a href="#work">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="theme-toggle icon-button" aria-label="Switch to light theme" title="Switch theme"><Icon name="sun" class="sun-icon" size={18}/><Icon name="moon" class="moon-icon" size={18}/></button>
@@ -26,7 +26,7 @@ import { profile, projects, experience, skillGroups } from '../data/portfolio';
           <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> SOFTWARE ENGINEER <span class="eyebrow-divider">/</span> SINGAPORE</div>
           <h1 id="hero-heading">Thoughtful code.<br/><span>Dependable systems.</span></h1>
           <p class="hero-intro">I’m <strong>Camlin Tan</strong>, a computer science student at NUS.<br class="desktop-break"/> I build dependable backends, AI infrastructure, and full-stack applications with care.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <Icon name="down" size={17}/></a></div>
+          <div class="hero-actions"><a class="button button-primary" href="#experience">View my experience <Icon name="down" size={17}/></a></div>
           <p class="availability"><span class="status-dot"></span>{profile.availability}</p>
         </div>
         <SystemGraphic />
@@ -38,24 +38,24 @@ import { profile, projects, experience, skillGroups } from '../data/portfolio';
       </div>
     </section>
 
-    <section id="work" class="section container" aria-labelledby="work-heading">
-      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>01</span> SELECTED WORK</div><h2 id="work-heading">Ideas into working software<span class="accent">.</span></h2></div><span class="section-aside">A few things I’ve been building <Icon name="down" size={16}/></span></div>
-      <div class="project-grid">{projects.map((project, index) => <ProjectCard project={project} index={index}/>)}</div>
-      <p class="work-footnote"><Icon name="code" size={16}/><span>From collaborative interfaces to the systems behind them.</span><a href={profile.github} target="_blank" rel="noopener noreferrer">Find me on GitHub <Icon name="arrow" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></p>
-    </section>
-
     <section id="experience" class="section container" aria-labelledby="experience-heading">
-      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>02</span> EXPERIENCE</div><h2 id="experience-heading">Built in good company<span class="accent">.</span></h2></div></div>
+      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>01</span> EXPERIENCE</div><h2 id="experience-heading">Built in good company<span class="accent">.</span></h2></div></div>
       <div class="timeline">{experience.map((job, index) => <article class:list={['experience-item', { 'experience-featured': index === 0 }]}>
         <div class="experience-date"><span class="timeline-point"></span><span class="mono">{job.period}</span><span class="experience-location">Singapore</span></div>
         <div class="experience-body"><div class="experience-title"><div><h3>{job.role}</h3><p class="company-name">{job.company}<span>{job.specialism && ` / ${job.specialism}`}</span></p></div>{index === 0 && <span class="company-monogram">ht<span>x</span></span>}</div><p class="experience-context">{job.fullName}</p><p class="experience-summary">{job.summary}</p>{job.highlights.length > 0 && <ul class="experience-highlights">{job.highlights.map(point => <li>{point}</li>)}</ul>}<ul class="tags">{job.tags.map(tag => <li>{tag}</li>)}</ul></div>
       </article>)}</div>
     </section>
 
+    <section id="work" class="section container" aria-labelledby="work-heading">
+      <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>02</span> SELECTED WORK</div><h2 id="work-heading">Ideas into working software<span class="accent">.</span></h2></div><span class="section-aside">A few things I’ve been building <Icon name="down" size={16}/></span></div>
+      <div class="project-grid">{projects.map((project, index) => <ProjectCard project={project} index={index}/>)}</div>
+      <p class="work-footnote"><Icon name="code" size={16}/><span>From collaborative interfaces to the systems behind them.</span><a href={profile.github} target="_blank" rel="noopener noreferrer">Find me on GitHub <Icon name="arrow" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></p>
+    </section>
+
     <section id="about" class="section container" aria-labelledby="about-heading">
       <div class="section-heading"><div><div class="eyebrow section-eyebrow"><span>03</span> A LITTLE ABOUT ME</div><h2 id="about-heading">Curiosity, with a solid foundation<span class="accent">.</span></h2></div></div>
-      <div class="about-grid"><div class="about-copy"><p>I’m drawn to the engineering underneath a good product: how data moves, how services work together, and how systems recover when things don’t go to plan.</p><p>At HTX, that meant building safer execution and reliable orchestration for AI workflows. In my projects, it means connecting useful interfaces to thoughtfully designed backends.</p><p>Teaching has shaped how I work, too. Whether I’m explaining graph theory or reviewing a pull request, I value making complex ideas clear.</p><div class="about-location"><Icon name="pin" size={16}/><span>Based in Singapore</span><span class="location-separator">·</span><span>Open to SWE opportunities</span></div></div>
-        <aside class="education-card" aria-label="Education"><div class="education-top"><span class="eyebrow">EDUCATION</span><span class="education-mark">NUS</span></div><h3>National University<br/>of Singapore</h3><p>Bachelor of Computing<br/>in Computer Science</p><span class="education-date mono">Aug 2024 — Dec 2027 (expected)</span><div class="education-achievements"><div><strong>4.88 <span>/ 5.0</span></strong><span>GPA</span></div><div><strong>Dean’s List</strong><span>AY 2024/25</span></div></div><p class="coursework">Algorithms · Operating systems · Software engineering · AI & machine learning</p></aside>
+      <div class="about-grid"><div class="about-copy"><p>I’m drawn to the engineering underneath a good product: how data moves, how services work together, and how systems recover when things don’t go to plan.</p><p>At HTX, that meant checkpointed AI workflows, sandboxed validation, live application previews, and safer generated-code edits. My projects span streaming market data, multimodal retrieval, computer vision, and collaborative tools.</p><p>Teaching has shaped how I work, too. Whether I’m explaining graph theory or reviewing a pull request, I value making complex ideas clear.</p><div class="about-location"><Icon name="pin" size={16}/><span>Based in Singapore</span><span class="location-separator">·</span><span>Open to SWE opportunities</span></div></div>
+        <aside class="education-card" aria-label="Education"><div class="education-top"><span class="eyebrow">EDUCATION</span><span class="education-mark">NUS</span></div><h3>National University<br/>of Singapore</h3><p>Bachelor of Computing<br/>in Computer Science</p><span class="education-date mono">Aug 2024 — Dec 2027 (expected)</span><div class="education-achievements"><div><strong>4.88 <span>/ 5.0</span></strong><span>GPA</span></div><div><strong>Dean’s List</strong><span>AY 2024/25</span></div></div><p class="coursework">Data structures & algorithms · Software engineering · Operating systems · Object-oriented programming · AI & machine learning · Information security</p></aside>
       </div>
       <div class="toolbox"><div class="toolbox-heading"><span class="eyebrow">MY TOOLBOX</span><p>The right tools for the problem.</p></div><div class="skill-grid">{skillGroups.map(group => <div class="skill-group"><h3>{group.name}</h3><ul class="tags">{group.skills.map(skill => <li>{skill}</li>)}</ul></div>)}</div></div>
     </section>

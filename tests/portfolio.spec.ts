@@ -7,8 +7,8 @@ test('portfolio renders correctly and the résumé PDF is not accessible', async
   page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
   await page.goto('./');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Thoughtful code.');
-  await expect(page.locator('.project-card')).toHaveCount(4);
-  await expect(page.locator('.experience-item')).toHaveCount(3);
+  await expect(page.locator('.project-card')).toHaveCount(5);
+  await expect(page.locator('.experience-item')).toHaveCount(2);
   await expect(page.locator('.availability')).toHaveText('Available from January 2027');
   await expect(page.locator('.project-quant .status-tag')).toHaveText('In progress');
   await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
@@ -38,7 +38,7 @@ test('project details are keyboard accessible and label the unfinished work', as
   await disclosure.focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('.project-quant details')).toHaveAttribute('open', '');
-  await expect(page.locator('.project-quant .project-details-body')).toContainText('Planned pipeline');
+  await expect(page.locator('.project-quant .project-details-body')).toContainText('PostgreSQL');
   await page.keyboard.press('Enter');
   await expect(page.locator('.project-quant details')).not.toHaveAttribute('open', '');
 });

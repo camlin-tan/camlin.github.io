@@ -131,10 +131,12 @@
   .visual-healthnote { --project-accent: #b1b5d9; --project-glow: #292b424d; }
   .visual-travelsync { --project-accent: #b6c6d2; --project-glow: #1e39434d; }
   .visual-quant { --project-accent: #cdbf9c; --project-glow: #3e35214d; }
+  .visual-capstone { --project-accent: #b8b5dc; --project-glow: #37314d4d; }
   [data-theme='light'] .visual-rag { --project-accent: #366345; --project-glow: #d4e8d54d; }
   [data-theme='light'] .visual-healthnote { --project-accent: #606289; --project-glow: #d0d2ee4d; }
   [data-theme='light'] .visual-travelsync { --project-accent: #456375; --project-glow: #d1e2e94d; }
   [data-theme='light'] .visual-quant { --project-accent: #796538; --project-glow: #e5d8b64d; }
+  [data-theme='light'] .visual-capstone { --project-accent: #65558a; --project-glow: #ded7ef4d; }
   .project-content { padding: 24px 27px 0; }
   .project-meta { display: flex; justify-content: space-between; color: var(--faint); font-family: var(--mono); font-size: 8px; letter-spacing: 1.2px; margin-bottom: 12px; }
   .project-meta > span:last-child { color: var(--faint); }

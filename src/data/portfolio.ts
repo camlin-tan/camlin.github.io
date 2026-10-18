@@ -23,6 +23,20 @@ export interface Project {
 // Add verified project URLs here; links render automatically when provided.
 export const projects: Project[] = [
   {
+    id: 'quant',
+    name: 'Real-Time Quant Data Engine',
+    category: 'DATA / BACKEND',
+    period: 'Jul 2026 — Present',
+    description: 'Turning live market ticks into historical data. A streaming pipeline that ingests WebSocket events and stores one-minute OHLCV bars.',
+    tags: ['Python', 'Pandas', 'PostgreSQL', 'Redpanda', 'Docker'],
+    status: 'In progress',
+    highlights: [
+      'Built a Python pipeline to ingest live market data over WebSockets and publish tick events to a Redpanda message broker.',
+      'Aggregated incoming ticks into one-minute open, high, low, close, and volume (OHLCV) bars with Pandas, storing the results in PostgreSQL for historical analysis.',
+      'Containerised the pipeline services with Docker Compose and automated testing with pytest and GitHub Actions.',
+    ],
+  },
+  {
     id: 'rag',
     name: 'Multimodal RAG',
     category: 'AI / FULL-STACK',
@@ -37,19 +51,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'capstone',
+    name: 'CS2109S Capstone Project',
+    category: 'COMPUTER VISION / AI',
+    period: 'Jan — Apr 2026',
+    description: 'From recognising game images to choosing the next move. An agent that combines a convolutional neural network with A* search.',
+    tags: ['Python', 'PyTorch', 'torchvision', 'A* search'],
+    highlights: [
+      'Trained a convolutional neural network with PyTorch and torchvision to classify game images, using data augmentation, dropout, and learning-rate scheduling.',
+      'Used A* search to plan actions around coin rewards and damage penalties, incorporating image recognition into the agent’s decisions.',
+    ],
+  },
+  {
     id: 'healthnote',
     name: 'HealthNote',
     category: 'SOFTWARE ENGINEERING',
     period: 'Sep — Nov 2025',
-    description: 'A keyboard-first patient and appointment manager for independent doctors. Built in Java and ranked in the top 10% of the cohort.',
+    description: 'A Java address book adapted into a patient record management app. Built in a five-person Agile team and ranked in the top 10% of the cohort.',
     github: 'https://github.com/camlin-tan/tp',
     tags: ['Java', 'JUnit', 'GitHub Actions', 'OOP'],
     status: 'Top 10% in cohort',
     highlights: [
-      'Delivered a modular Java system with a five-person Agile team, following object-oriented design principles.',
-      'Designed a GitHub Actions pipeline to automate builds and tests.',
-      'Wrote JUnit regression tests, reviewed pull requests, and coordinated test ownership.',
-      'Maintained documentation and code standards to support future development.',
+      'Adapted a Java address book application into a patient record management app in a five-person Agile team.',
+      'Ranked in the top 10% of the cohort for software engineering.',
+      'Reviewed pull requests and coordinated testing responsibilities across the team.',
+      'Implemented a GitHub Actions CI/CD pipeline to automate builds and run JUnit tests on code changes.',
+      'Wrote JUnit tests to verify application behaviour and detect regressions.',
     ],
   },
   {
@@ -65,21 +92,6 @@ export const projects: Project[] = [
       'Integrated Google Maps for dynamic routes, location markers, and itinerary visualisation.',
     ],
   },
-  {
-    id: 'quant',
-    name: 'Real-Time Quant Data Engine',
-    category: 'DATA / BACKEND',
-    period: 'Jul 2026 — Present',
-    description: 'Exploring the infrastructure behind market data: from live event ingestion to queryable time series and archival storage.',
-    tags: ['Python', 'FastAPI', 'TimescaleDB', 'Redpanda'],
-    status: 'In progress',
-    highlights: [
-      'An active build, with the architecture and implementation still evolving.',
-      'Planned pipeline: ingest WebSocket market data into Redpanda, aggregate 60-second OHLCV bars, and store time series in TimescaleDB.',
-      'Planned serving and archival layers: an asynchronous FastAPI service, plus Airflow and PySpark workflows to archive Parquet files to MinIO.',
-      'Target tooling includes Docker Compose, pytest, and GitHub Actions for repeatable development and validation.',
-    ],
-  },
 ];
 
 export const experience = [
@@ -90,14 +102,16 @@ export const experience = [
     specialism: 'Backend & AI Infrastructure',
     period: 'May — Jul 2026',
     year: '2026',
-    summary: 'Built the infrastructure behind an agentic software development harness, from orchestration to isolated execution.',
+    summary: 'Built the backend for an AI coding agent, covering checkpointed workflows, sandboxed validation, live previews, and safer code edits.',
     highlights: [
-      'Engineered a checkpointed, human-in-the-loop workflow across a 9-node LangGraph state graph.',
-      'Used DFS-based topological sorting and cycle validation to make code generation dependency-aware.',
-      'Built Docker sandboxes with asynchronous logs and thread-safe cancellation, plus SSE streams and a WebSocket proxy.',
-      'Added atomic file replacement, node-level rollback, and asynchronous integration tests for patch safety and context isolation.',
+      'Coordinated requirements, planning, code generation, validation, and repair with Python, FastAPI, LangGraph, and SQLite, including saved checkpoints and human approval steps.',
+      'Implemented DFS-based topological sorting and cycle detection to generate files in dependency order and reject circular dependencies.',
+      'Built a Docker-based validation and repair pipeline using Vite and Vitest, routing build and rendering errors to targeted AI repairs and supporting thread-safe container cancellation.',
+      'Developed SSE streams for live progress and build logs, plus an HTTP/WebSocket reverse proxy for application previews and Vite hot module replacement.',
+      'Protected generated edits with path validation, exact-match patch checks, atomic file replacement, and rollback when an editing step failed or was cancelled.',
+      'Wrote pytest tests for edit-block validation and patch application, verifying that invalid edits were rejected and valid patches produced the expected file contents.',
     ],
-    tags: ['Python', 'FastAPI', 'LangGraph', 'Docker', 'SQLite'],
+    tags: ['Python', 'FastAPI', 'LangGraph', 'Docker', 'SQLite', 'Vite', 'Vitest', 'pytest'],
   },
   {
     company: 'National University of Singapore',
@@ -110,22 +124,11 @@ export const experience = [
     highlights: [],
     tags: ['Discrete mathematics', 'Communication', 'Mentorship'],
   },
-  {
-    company: 'A-Level Tutoring',
-    fullName: 'Mathematics & Sciences',
-    role: 'Part-time Tutor',
-    specialism: '',
-    period: 'Dec 2023 — Jul 2024',
-    year: '2023–24',
-    summary: 'Delivered personalised coaching in mathematics and sciences, with an average improvement of 2–3 grades.',
-    highlights: [],
-    tags: ['Problem solving', 'Teaching'],
-  },
 ];
 
 export const skillGroups = [
   { name: 'Languages', skills: ['Python', 'Java', 'C', 'SQL', 'TypeScript', 'JavaScript', 'HTML / CSS'] },
   { name: 'Backend & systems', skills: ['FastAPI', 'Node.js', 'REST APIs', 'WebSockets', 'Server-Sent Events'] },
-  { name: 'Data & AI', skills: ['SQLite', 'Chroma', 'Supabase', 'LangGraph', 'LlamaIndex', 'RAG pipelines'] },
-  { name: 'Frontend & delivery', skills: ['React', 'Tailwind CSS', 'Docker', 'Git', 'GitHub Actions', 'JUnit', 'Vercel'] },
+  { name: 'Data & AI', skills: ['PostgreSQL', 'SQLite', 'Pandas', 'Chroma', 'Supabase', 'LangGraph', 'LlamaIndex', 'RAG pipelines', 'PyTorch', 'torchvision'] },
+  { name: 'Frontend & delivery', skills: ['React', 'Tailwind CSS', 'pytest', 'Docker', 'Git / GitHub', 'GitHub Actions', 'JUnit', 'Vercel'] },
 ];
